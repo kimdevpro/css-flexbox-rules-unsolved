@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/authentication-form.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/authentication-form.css">
     <title>Login and Signup</title>
   </head>
   <body class="bg-white">
@@ -28,39 +28,43 @@
           <p class="subtext">for existing users</p>
         </div>
         <!-- Sign IN form starts here -->
-        <form id="sign-in-form">
+        <form id="sign-in-form" onsubmit="return true">
           <div class="form-input-control">
             <label for="login-field">Login</label>
             <input
               type="email"
               id="login-field"
-              placeholder="use your email as login"
+              name="email"
               required
-            />
+              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+              placeholder="use your email as login"
+              title="Please enter a valid email like name@example.com"
+            >
           </div>
           <div class="form-input-control">
             <label for="password-field">Password</label>
             <input
               type="password"
               id="password-field"
-              placeholder="passwords must match"
+              placeholder="8-20 characters"
               minlength="8"
+              maxlength="20"
               required
-            />
+            >
           </div>
           <div class="form-checkbox-control">
-            <input type="checkbox" id="stay-signed-in" />
+            <input type="checkbox" id="stay-signed-in">
             <label for="stay-signed-in">Stay signed in</label>
           </div>
-          <hr />
+          <hr>
           <div class="form-submit-control">
-            <input type="submit" value="Sign in" />
+            <input type="submit" value="Sign in">
             <a href="/#">Forgot your password?</a>
           </div>
         </form>
         <!-- Sign IN form ends here -->
       </div>
-      <div id="sign-up">
+      <div id="sign-up" onsubmit="return true">
         <div class="form-header">
           <h2>Sign up</h2>
           <p class="subtext">for new users</p>
@@ -75,27 +79,29 @@
               minlength="5"
               placeholder="ex.: John Doe"
               required
-            />
+            >
           </div>
           <div class="form-input-control">
             <label for="email">Email</label>
             <input
               type="email"
               id="email"
-              placeholder="name@domain.zone"
               required
-            />
+              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+              placeholder="name@domain.zone"
+              title="Please enter a valid email like name@example.com"
+            >
           </div>
           <div class="form-input-control">
             <label for="password">Password</label>
             <input
               type="password"
               id="password"
-              placeholder="8 characters minimum"
+              placeholder="8-20 characters"
               minlength="8"
               maxlength="20"
               required
-            />
+            >
           </div>
           <div class="form-input-control">
             <label for="confirm-password">Confirm Password</label>
@@ -106,7 +112,7 @@
               minlength="8"
               maxlength="20"
               required
-            />
+            >
           </div>
           <div class="form-input-control">
             <label for="phone">Phone number</label>
@@ -116,11 +122,14 @@
               minlength="12"
               maxlength="12"
               placeholder="ex.: +12336456355"
-            />
+              required
+              pattern="^\+1\d{10}$"
+              title="Phone number must be in the format +1 followed by 10 digits, e.g., +14052210145"
+            >
           </div>
           <div class="form-input-control">
             <label for="avatar">Avatar</label>
-            <input type="file" id="avatar" />
+            <input type="file" id="avatar">
           </div>
           <div class="form-group-horizontal-control">
             <div class="form-input-control">
@@ -146,11 +155,11 @@
             <p>Gender</p>
             <div class="form-group-vertical-control">
               <div class="form-radio-control">
-                <input type="radio" id="male" name="gender" value="male" />
+                <input type="radio" id="male" name="gender" value="male">
                 <label for="male">Male</label>
               </div>
               <div class="form-radio-control">
-                <input type="radio" id="female" name="gender" value="female" />
+                <input type="radio" id="female" name="gender" value="female">
                 <label for="female">Female</label>
               </div>
               <div class="form-radio-control">
@@ -160,14 +169,14 @@
                   name="gender"
                   value="other"
                   checked
-                />
+                >
                 <label for="other">Other</label>
               </div>
             </div>
           </div>
-          <hr />
+          <hr>
           <div class="form-submit-control">
-            <input type="submit" value="Sign up" />
+            <input type="submit" value="Sign up">
           </div>
         </form>
         <!-- Sign UP form ends here -->
